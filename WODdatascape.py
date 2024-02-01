@@ -35,29 +35,6 @@ for j in range(3390):
             ]
             scores_data.append(scores_entry)
 
-
-# for num in range(3, 5):
-#     url = f'https://c3po.crossfit.com/api/leaderboards/v2/competitions/open/2023/leaderboards?view=0&division=1&region=0&scaled=0&sort=0&page={num}'
-#     response = urlopen(url)
-#     api_response = json.loads(response.read())
-#     for row in api_response["leaderboardRows"]:
-#         athlete_info_data.append([
-#             row["entrant"]["competitorId"],
-#             row["entrant"]["competitorName"],
-#             row["entrant"]["age"],
-#             row["entrant"]["height"],
-#             row["entrant"]["weight"],
-#         ])
-#         scores_entry = [
-#             row["entrant"]["competitorId"],
-#             row["scores"][0]["scoreDisplay"],
-#             row["scores"][1]["scoreDisplay"],
-#             row["scores"][2]["scoreDisplay"],
-#             row["scores"][3]["scoreDisplay"],
-#         ]
-#         scores_data.append(scores_entry)
-
-
 # Create DataFrames
 athlete_info_df = pd.DataFrame(athlete_info_data, columns=["id", "name", "age", "height", "weight"])
 scores_df = pd.DataFrame(scores_data, columns=["id", "23.1", "23.2A", "23.2B", "23.3"])
